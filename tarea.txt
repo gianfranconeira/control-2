@@ -1,0 +1,93 @@
+#include <iostream>
+using namespace std;
+//pregunta 1
+class data{
+public:
+int data;
+data*next;
+data(){}
+};
+class setTDA{
+public:
+setTDA(){}
+void insert(data x){}
+data delete(){}
+bool isempty(){}
+};
+class conjunto{
+public:
+data *head;
+conjunto(){}
+void agregar(data x){void insert(data x)}
+data sacar(){data delete()}
+bool estavacio(){bool isempty()}
+bool pertenece(data x){
+if(estavacio()){return false;}
+else{
+data*aux=head;
+if(aux->data==x){return true;}
+else{
+while(aux!=NULL){
+if(aux->data==x){return true;}
+aux=aux->next;
+}
+return false;
+}
+}
+
+conjunto interseccion(conjunto c){
+conjunto *aux = c;
+conjunto *nuevo = new conjunto();
+data *aux2 = aux ->sacar();
+while(true){
+if(aux -> estaVacio() == true){break;}
+if(pertenece(aux2) == true){
+nuevo ->agregar(aux2);
+}
+else{
+aux2 = aux->sacar();
+}
+return *nuevo;
+}
+}
+	
+conjunto union(conjunto c){
+conjunto *aux = c;
+conjunto *nuevo = new conjunto();
+data *aux2 = aux ->sacar();
+while(true){
+if(aux -> estaVacio() == true){break}
+if(pertenece(aux2) == true){
+nuevo ->agregar(aux2);
+}
+else{
+nuevo ->agregar(aux2);
+}
+return *nuevo;
+}
+}
+
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
