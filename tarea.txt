@@ -36,12 +36,12 @@ return false;
 }
 
 conjunto interseccion(conjunto c){
-conjunto *aux = c;
+conjunto *aux = c2;
 conjunto *nuevo = new conjunto();
 data *aux2 = aux ->sacar();
 while(true){
-if(aux -> estaVacio() == true){break;}
-if(pertenece(aux2) == true){
+if(aux->estaVacio()==true){break;}
+if(pertenece(aux2)==true){
 nuevo ->agregar(aux2);
 }
 else{
@@ -52,7 +52,7 @@ return *nuevo;
 }
 	
 conjunto union(conjunto c){
-conjunto *aux = c;
+conjunto *aux = c2;
 conjunto *nuevo = new conjunto();
 data *aux2 = aux ->sacar();
 while(true){
